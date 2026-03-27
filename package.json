@@ -1,0 +1,12 @@
+{
+  "name": "chatgpt-cli",
+  "version": "1.0.0",
+  "description": "ChatGPTとチャット会話できるCLIツール",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "openai": "^4.0.0"
+  }
+}
