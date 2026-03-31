@@ -241,6 +241,8 @@ async function main() {
   console.log(`${hr}\n`);
 
   const seen = loadSeenDocs();
+  // 初回起動時に seen_docs.json を生成
+  saveSeenDocs(seen);
 
   // ── EDINET ──
   console.log('【EDINET】意見表明報告書 / 公開買付届出書');
