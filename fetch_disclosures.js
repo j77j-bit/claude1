@@ -93,7 +93,12 @@ async function fetchEdinetDocs(date) {
 async function fetchTdnetDocs(dateCompact) {
   const url = `${TDNET_BASE}/inbs/I_list_001_${dateCompact}.html`;
   const res = await fetch(url, {
-    headers: { 'User-Agent': 'disclosure-fetcher/1.0' },
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+      'Referer': TDNET_BASE + '/',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Accept-Language': 'ja,en;q=0.9',
+    },
   });
   if (!res.ok) throw new Error(`TDnet HTTP ${res.status}`);
   const html = await res.text();
